@@ -28,6 +28,10 @@ let transporter = nodemailer.createTransport({
     user: process.env.EMAIL, //replace with the email address
     pass: process.env.EMAIL_PASS, //replace with the password
   },
+  tls: {
+    // do not fail on invalid certs
+    rejectUnauthorized: false,
+  },
 });
 
 // verify connection configuration
