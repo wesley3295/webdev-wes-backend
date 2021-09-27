@@ -18,6 +18,8 @@ app.use("/", router);
 //nodemailer
 let transporter = nodemailer.createTransport({
   host: "smtp.gmail.com", //replace with your email provider
+  port: process.env.PORT,
+  secure: true,
   auth: {
     user: process.env.EMAIL, //replace with the email address
     pass: process.env.EMAIL_PASS, //replace with the password
