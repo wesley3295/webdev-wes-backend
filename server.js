@@ -11,7 +11,7 @@ var corsOptions = {
   origin: "http://localhost:3000",
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
-app.get("/", (req, res) => res.status(200).send("test"));
+app.get("/contact", (req, res) => res.status(200).send("test"));
 
 //Listener
 app.listen(port, () => console.log(`You're Connected on localhost:${port}`));
