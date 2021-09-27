@@ -7,6 +7,7 @@ const app = express();
 const port = process.env.PORT;
 app.use(express.json());
 app.use(Cors());
+app.get("/", (req, res) => res.status(200).send("test"));
 
 //Listener
 app.listen(port, () => console.log(`You're Connected on localhost:${port}`));
