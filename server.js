@@ -7,6 +7,10 @@ const app = express();
 const port = process.env.PORT;
 app.use(express.json());
 app.use(Cors());
+var corsOptions = {
+  origin: "http://localhost:3000",
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 app.get("/", (req, res) => res.status(200).send("test"));
 
 //Listener
@@ -35,7 +39,7 @@ transporter.verify(function (error, success) {
   }
 });
 
-router.post("/contact", (req, res) => {
+router.post("/contact", Cors(corsOptions), (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const phone = req.body.phone;
